@@ -66,7 +66,7 @@
 incremental_db/
 db/
 output_files/
-.meta_data/
+.metadata/
 .qsys_edit/
 RemoteSystemsTempFiles/
 devkits/
