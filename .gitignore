@@ -65,5 +65,9 @@
 */*_sim/
 incremental_db/
 db/
-_output_files/
+output_files/
+.meta_data/
+.qsys_edit/
+RemoteSystemsTempFiles/
+devkits/
 PLLJ_PLLSPE_INFO.txt
