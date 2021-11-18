@@ -247,16 +247,15 @@ void setColorPalette (alt_u8 color, alt_u8 red, alt_u8 green, alt_u8 blue)
 	}
 
 
+bool occupied[200];
 
 //this function determine whether a block is touching the edge
 bool isUsed (int x, int y) {
 	if((x < 0) || (x >= 10) || (y < 0) || (y >= 20)){
       return true;
-	} //else if (vga_ctrl->VRAM[y*10+x]>0){
-      //return true;
-	//}
+	}
 	else{
-		return false;
+		return(occupied[(y*10) + x]);
 	}
 
 }
@@ -275,15 +274,24 @@ void removeRow(int y, int num){
 bool placeNewTet(int val,int color){
 	int x = 3;
 	int y = 0;
-	printf("%x", val);
+	bool finish = true;
+	int blocks[4] = {0,0,0,0};
+	int block_count = 0;
+	//printf("%x", val);
 
 	for(int bit = 0x8000 ; bit > 0 ; bit = bit >> 1) {
-		printf("%x",x);
-		if(isUsed(x,y)){
-			return false;
-		}
+		//printf("%x",x);
+
 		if((val & bit) != 0){
-			vga_ctrl->VRAM[y*10 +x] = color;
+			if(isUsed(x,y)){
+				finish = false;
+				break;
+			}
+			else{
+			blocks[block_count] = y*10+x;
+			block_count++;
+			finish = true;
+			}
 			}
 		x++;
 		if(x > 6){
@@ -292,13 +300,23 @@ bool placeNewTet(int val,int color){
 
 		}
 }
-	return true;
+	if(finish){
+		for(int i =0;i<4;i++){
+			printf("%x \n",blocks[i]);
+			occupied[blocks[i]] = true;
+			vga_ctrl->VRAM[blocks[i]] = color;
+		}
+
+	}
+	return finish;
 }
 
 
 
 int main() {
-
+	for(int i=0;i<200;i++){
+		occupied[i] = false;
+	}
 	printf("initializing MAX3421E...\n");
 	MAX3421E_init();
 	printf("initializing USB...\n");
@@ -322,6 +340,7 @@ int main() {
 	int rot_count =0;
 	bool last = false;
 	bool last_down[4] = {false,false,false,false};
+	bool now_down[4] = {false,false,false,false};
 	bool flag = true;
 
 
@@ -363,14 +382,18 @@ int main() {
 	curr_tet = pieces[select][0];
 
 	flag = placeNewTet(curr_tet,select+1);
+
 	while (1) {
 
 		curr = returnKeys();
 		move = true;
+		if(!flag){
+			break;
+		}
 		switch(*curr){
 
 		case 0x1A:
-			printf("hello");
+
 			new_rot = (curr_rot+1)%4;
 			for(int bit = 0x8000; bit >0;bit = bit >> 1){
 
@@ -397,13 +420,15 @@ int main() {
 				}
 			}
 			if(move){
-				printf("text");
-				printf("\n");
+
 				curr_tet = pieces[select][new_rot];
 				curr_rot = (curr_rot +1)%4;
 				for(int i =0;i<4;i++){
 				vga_ctrl->VRAM[rot_blocks[i]] = 0b0000000000000000000000000000000;
 				vga_ctrl->VRAM[blocks[i]] = select+1;
+				occupied[rot_blocks[i]] = false;
+				occupied[blocks[i]] = true;
+
 				}
 			}
 
@@ -439,10 +464,12 @@ int main() {
 			if(move){
 				x -=1;
 				for(int i =0;i<4;i++){
-					printf("%x ",blocks[i]-1);
-					printf("\n");
+
 					vga_ctrl->VRAM[blocks[i]-1] = select+1;
 					vga_ctrl->VRAM[blocks[i]] = 0b00000000000000000000000000000000;
+					occupied[blocks[i]] = false;
+					occupied[blocks[i]-1] = true;
+
 			}
 			}
 			currx = 0;
@@ -456,7 +483,7 @@ int main() {
 			for(int bit = 1 ; bit <= 0x8000 ; bit = bit << 1) {
 					if((curr_tet & bit) != 0){
 						if(!isUsed(-currx+1+x+3,-curry+y+3) || last){
-							printf("anything");
+
 							blocks[block_count] = (-curry+y+3)*10 + -currx + x+3;
 							block_count++;
 							last = true;
@@ -479,10 +506,11 @@ int main() {
 				if(move){
 					x +=1;
 					for(int i =0;i<4;i++){
-						printf("%x ",blocks[i]+1);
-						printf("\n");
+
 						vga_ctrl->VRAM[blocks[i]+1] = select+1;
 						vga_ctrl->VRAM[blocks[i]] = 0b00000000000000000000000000000000;
+						occupied[blocks[i]] = false;
+						occupied[blocks[i]+1] = true;
 				}
 				}
 				currx = 0;
@@ -494,9 +522,11 @@ int main() {
 			for(int bit = 1 ; bit <= 0x8000 ; bit = bit << 1) {
 				if((curr_tet & bit) != 0){
 					if(!isUsed(-currx+x+3,-curry+1+y+3) || last_down[currx]){
+						printf("something \n");
+						printf("%x %x \n",last_down[currx],(-curry+y+3)*10 + -currx + x+3);
 						blocks[block_count] = (-curry+y+3)*10 + -currx + x+3;
 						block_count++;
-						last_down[currx] = true;
+						now_down[currx] = true;
 						}
 					else{
 						move = false;
@@ -504,24 +534,26 @@ int main() {
 					}
 					}
 				else{
-					last_down[currx] = false;
+					now_down[currx] = false;
 				}
 				currx++;
 				if(currx > 3){
 					currx = 0;
 					curry++;
 					for(int i=0;i<4;i++){
-					last_down[i] = false;
+					last_down[i] = now_down[i];
+					now_down[i] = false;
 					}
 				}
 			}
 			if(move){
 				y++;
 				for(int i =0;i<4;i++){
-					printf("%x ",blocks[i]+1);
-					printf("\n");
+
 					vga_ctrl->VRAM[blocks[i]+10] = select+1;
 					vga_ctrl->VRAM[blocks[i]] = 0b00000000000000000000000000000000;
+					occupied[blocks[i]] = false;
+					occupied[blocks[i]+10] = true;
 				}
 			}
 			currx = 0;
@@ -535,56 +567,59 @@ int main() {
 			break;
 	}
 		usleep(20000);
-		for(int bit = 1 ; bit <= 0x8000 ; bit = bit << 1) {
-						if((curr_tet & bit) != 0){
-							if(!isUsed(-currx+x+3,-curry+1+y+3) || last_down[currx]){
-								blocks[block_count] = (-curry+y+3)*10 + -currx + x+3;
-								block_count++;
-								last_down[currx] = true;
-								}
-							else{
-								move = false;
-								break;
-							}
-							}
-						else{
-							last_down[currx] = false;
-						}
-						currx++;
-						if(currx > 3){
-							currx = 0;
-							curry++;
-							for(int i=0;i<4;i++){
-							last_down[i] = false;
-							}
-						}
-					}
-					if(move){
-						y++;
-						for(int i =0;i<4;i++){
-							printf("%x ",blocks[i]+1);
-							printf("\n");
-							vga_ctrl->VRAM[blocks[i]+10] = select+1;
-							vga_ctrl->VRAM[blocks[i]] = 0b00000000000000000000000000000000;
-						}
-					}
-						else{
-							x= 3;
-							y =0;
-							select = rand()%7;
-							curr_tet = pieces[select][0];
-							flag = placeNewTet(curr_tet,select+1);
+	for(int bit = 1 ; bit <= 0x8000 ; bit = bit << 1) {
+		if((curr_tet & bit) != 0){
+			if(!isUsed(-currx+x+3,-curry+1+y+3) || last_down[currx]){
+				printf("something \n");
+				printf("%x %x \n",last_down[currx],(-curry+y+3)*10 + -currx + x+3);
+				blocks[block_count] = (-curry+y+3)*10 + -currx + x+3;
+				block_count++;
+				now_down[currx] = true;
+				}
+			else{
+				move = false;
+				break;
+			}
+			}
+		else{
+			now_down[currx] = false;
+		}
+		currx++;
+		if(currx > 3){
+			currx = 0;
+			curry++;
+			for(int i=0;i<4;i++){
+			last_down[i] = now_down[i];
+			now_down[i] = false;
+			}
+		}
+	}
+	if(move){
+		y++;
+		for(int i =0;i<4;i++){
 
-						}
+			vga_ctrl->VRAM[blocks[i]+10] = select+1;
+			vga_ctrl->VRAM[blocks[i]] = 0b00000000000000000000000000000000;
+			occupied[blocks[i]] = false;
+			occupied[blocks[i]+10] = true;
+		}
+	}
+	else{
+								x= 3;
+								y =0;
+								select = rand()%7;
+								curr_tet = pieces[select][0];
+								flag = placeNewTet(curr_tet,select+1);
 
-					currx = 0;
-					curry = 0;
-					block_count = 0;
+							}
+	currx = 0;
+	curry = 0;
+	block_count = 0;
 
-					move = true;
-					for(int i=0;i<4;i++){
-						last_down[i] = false;
-					}
+	move = true;
+	for(int i=0;i<4;i++){
+		last_down[i] = false;
+	}
 	}
 	return 0;
 }
