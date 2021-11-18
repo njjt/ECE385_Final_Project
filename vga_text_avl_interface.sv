@@ -22,7 +22,7 @@ module vga_text_avl_interface (
 	output logic hs, vs						// VGA HS/VS
 );
 
-logic [31:0] pallette       [8]; // Registers
+logic [31:0] pallette       [16]; // Registers
 //put other local variables here
 logic pixel_clk_anh;
 logic blank_anh;
@@ -40,6 +40,8 @@ logic [3:0] front;
 logic [31:0]Q; 
 logic [10:0] read_addr;
 logic wren;
+//logic [10:0] left;
+//logic [10:0] right;
 //logic rden;
 //addr_nh[10:7] = 4'b0000;
 assign addr_nh = 16*current_char + DrawY_nh[3:0]; 
@@ -54,7 +56,7 @@ always_ff @(posedge CLK) begin
 if(AVL_CS&&AVL_WRITE)
 begin
 //rden = 0;
-if(AVL_ADDR[11] && (AVL_ADDR[10:3] ==0))
+if(AVL_ADDR > 200)
 begin
 wren <= 0;
 //AVL_READDATA = LOCAL_REG[AVL_ADDR[2:0]];
@@ -75,14 +77,12 @@ end
 end
 if(AVL_CS && AVL_READ)
 begin
-if(AVL_ADDR[11])
+if(AVL_ADDR>200)
 begin
-//rden = 0;
-AVL_READDATA <= pallette[AVL_ADDR[2:0]];
+AVL_READDATA <= pallette[AVL_ADDR -200];
 end
 else
 begin
-//rden = 1;
 AVL_READDATA <= Q;
 end
 end
@@ -91,7 +91,10 @@ end
 //handle drawing (may either be combinational or sequential - or both).
 always_comb
 begin:block_display
-		
+//left = ((((DrawX_nh - 140) >> 4)+1) *3)-1;
+//right =((((DrawX_nh - 140) >> 4)) *3); 
+
+read_addr = ((DrawY_nh-100) >> 4)*10 + ((DrawX_nh - 140) >> 4);
 end
 
 
@@ -107,37 +110,38 @@ begin:Color_Display
 			 blue = 0;
 		end
 	
-		else if (DrawX_nh > 140 && DrawX_nh < 300 && DrawY_nh > 100 && DrawY_nh < 420) //player1
+		else if (DrawX_nh > 140 && DrawX_nh <= 300 && DrawY_nh > 100 && DrawY_nh <= 420) //player1
+		begin
+			
+		   red = pallette[Q[3:0]][11:8];
+			green = pallette[Q[3:0]][7:4];
+			blue = pallette[Q[3:0]][3:0];
+		end
+		else if (DrawX_nh > 140 && DrawX_nh <= 300 && DrawY_nh > 20 && DrawY_nh <= 80) //player1 score_section
 		begin
 			red  = 0;
 			blue = 15;
 			green = 0;
 		end
-		else if (DrawX_nh > 140 && DrawX_nh < 300 && DrawY_nh > 20 && DrawY_nh < 80) //player1 score_section
+		else if (DrawX_nh > 20 && DrawX_nh <= 120 && DrawY_nh > 180 && DrawY_nh <= 340) //player1 next_shape
 		begin
 			red  = 0;
 			blue = 15;
 			green = 0;
 		end
-		else if (DrawX_nh > 20 && DrawX_nh < 120 && DrawY_nh > 180 && DrawY_nh < 340) //player1 next_shape
-		begin
-			red  = 0;
-			blue = 15;
-			green = 0;
-		end
-		else if (DrawX_nh > 340  && DrawX_nh < 500 && DrawY_nh > 100 && DrawY_nh < 420) //player2
+		else if (DrawX_nh > 340  && DrawX_nh <= 500 && DrawY_nh > 100 && DrawY_nh <= 420) //player2
 		begin
 			red  = 0;
 			blue = 5;
 			green = 5;
 		end
-		else if (DrawX_nh > 340  && DrawX_nh < 500 && DrawY_nh > 20 && DrawY_nh < 80) //player2 score_section
+		else if (DrawX_nh > 340  && DrawX_nh <= 500 && DrawY_nh > 20 && DrawY_nh <= 80) //player2 score_section
 		begin
 			red  = 0;
 			blue = 5;
 			green = 5;
 		end
-		else if (DrawX_nh > 520  && DrawX_nh < 620 && DrawY_nh > 180 && DrawY_nh < 340) //player2 next_shape
+		else if (DrawX_nh > 520  && DrawX_nh <= 620 && DrawY_nh > 180 && DrawY_nh <= 340) //player2 next_shape
 		begin
 			red  = 0;
 			blue = 5;
@@ -154,6 +158,6 @@ begin:Color_Display
 		
 end      
 
-ramfin r1(.byteena_a(AVL_BYTE_EN),.clock(CLK),.data(AVL_WRITEDATA),.rdaddress(read_addr),.wraddress(AVL_ADDR),.wren(wren),.q(Q));
+ramp r1(.byteena_a(AVL_BYTE_EN),.clock(CLK),.data(AVL_WRITEDATA),.rdaddress(read_addr),.wraddress(AVL_ADDR),.wren(wren),.q(Q));
 
 endmodule
