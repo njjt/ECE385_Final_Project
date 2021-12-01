@@ -198,7 +198,7 @@ BYTE* returnKeys()
 }
 
 struct TEXT_VGA_STRUCT {
-	alt_u32 VRAM [440]; //Week 2 - extended VRAM
+	alt_u32 VRAM [240]; //Week 2 - extended VRAM
 	alt_u32 pallette [16];
 };
 
@@ -270,8 +270,8 @@ int removeRow(int y){
 				}
 			}
 			if(colCount == 10){
-				//printf("%x \n", y);
-				for(int k = ((y+3)*10);k>0;k--){
+			printf("%x \n", y);
+				for(int k = ((i)*10+9);k>0;k--){
 					if(k < 200){
 					if((k-(10)) >= 0){
 						vga_ctrl->VRAM[k-10] = 0b00000000000000000000000000000000;
@@ -331,7 +331,7 @@ bool placeNewTet(int val,int color){
 void initGame(){
 	for(int i=0;i<200;i++){
 			vga_ctrl->VRAM[i] = rand()%7 +1;
-			usleep(5000);
+			usleep(50000);
 			vga_ctrl->VRAM[i] = 0b00000000000000000000000000000000;
 			occupied[i] = 0;
 		}
@@ -355,6 +355,21 @@ int genTet(){
 	pieceNums[select] = -1;
 	return res;
 }
+
+
+void textVGADrawColorText(char* str)
+{
+	int i = 0;
+	while (str[i]!=0)
+	{
+		vga_ctrl->VRAM[i] = str[i];
+		//vga_ctrl->VRAM[(y*COLUMNS + x + i) * 2 + 1] = str[i];
+
+		i++;
+	}
+}
+
+
 
 int main() {
 
@@ -388,7 +403,7 @@ int main() {
 	int score = 0;
 	int level = 1;
 	int levelThreshold = 0;
-
+	char score_string[80];
 	int pieces[7][4] = {
 			{
 					0x0F00, 0x2222, 0x00F0, 0x4444  //i
@@ -414,7 +429,8 @@ int main() {
 	};
 
 
-
+	//sprintf(score_string, "Score : %d", score);
+	//textVGADrawColorText (score_string);
 
 	for (int i = 0; i < 16; i++)
 		{
@@ -425,6 +441,8 @@ int main() {
 	curr_tet = pieces[select][0];
 	flag = placeNewTet(curr_tet,select+1);
 	while (1) {
+		sprintf(score_string, "Score : %d", score);
+		textVGADrawColorText (score_string);
 		printSignedHex0(level);
 		printSignedHex1(score);
 		curr = returnKeys();
@@ -486,7 +504,7 @@ int main() {
 			else{
 				currLines = removeRow(y);
 				lines += currLines;
-				printf("%d \n",lines);
+
 				switch(currLines){
 				case 0:
 					break;
@@ -520,7 +538,7 @@ int main() {
 			for(int i=0;i<4;i++){
 				last_down[i] = false;
 			}
-			usleep(40000);
+			usleep(17000-1000*level);
 
 
 		switch(*curr){
@@ -696,7 +714,7 @@ int main() {
 			break;
 	}
 
-
+		usleep(17000-1000*level);
 	}
 	return 0;
 }

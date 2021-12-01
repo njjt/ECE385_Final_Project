@@ -1,0 +1,1327 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/simulation/modelsim
+valtera_avalon_sc_fifo
+Z1 !s110 1638323964
+!i10b 1
+!s100 4mK@em][G=j]om3zJIhOc0
+IoPZQ@WFj]P4F`Qk1=W6C_0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1638323095
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_avalon_sc_fifo.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_avalon_sc_fifo.v
+Z4 L0 21
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1638323964.000000
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_avalon_sc_fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_avalon_sc_fifo.v|
+!i113 1
+Z7 o-vlog01compat -work Finalsoc
+Z8 !s92 -vlog01compat -work Finalsoc +incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules
+Z9 tCvgOpt 0
+valtera_reset_controller
+Z10 !s110 1638323963
+!i10b 1
+!s100 z[H_hRO9gO=:^2E3_jWH03
+I1VAhXjmD8Z`TmjTINUAc60
+R2
+R0
+Z11 w1638323093
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_reset_controller.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_reset_controller.v
+L0 42
+R5
+r1
+!s85 0
+31
+Z12 !s108 1638323963.000000
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_reset_controller.v|
+!i113 1
+R7
+R8
+R9
+valtera_reset_synchronizer
+R10
+!i10b 1
+!s100 oWLYmSO[EOX[G0PgQhZ2=0
+IF<lC?]jbh^lETC[;lcld?0
+R2
+R0
+R11
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_reset_synchronizer.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_reset_synchronizer.v
+L0 24
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/altera_reset_synchronizer.v|
+!i113 1
+R7
+R8
+R9
+vFinalsoc
+R10
+!i10b 1
+!s100 cAg<lNiA^o]OPYPSPU3EX3
+IfBZfLcO4P0G9]]BlD;?LJ0
+R2
+R0
+w1638323077
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/Finalsoc.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/Finalsoc.v
+L0 6
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/Finalsoc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/Finalsoc.v|
+!i113 1
+R7
+!s92 -vlog01compat -work Finalsoc +incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis
+R9
+n@finalsoc
+vFinalsoc_hex_digits_pio
+Z13 !s110 1638323965
+!i10b 1
+!s100 MUoT;<TNd@98db7Q7fb<G0
+Ic=YHT72zn<Cfjg5hhK0iD1
+R2
+R0
+Z14 w1638323078
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_hex_digits_pio.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_hex_digits_pio.v
+R4
+R5
+r1
+!s85 0
+31
+Z15 !s108 1638323965.000000
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_hex_digits_pio.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_hex_digits_pio.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_hex_digits_pio
+vFinalsoc_irq_mapper
+Z16 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R13
+!i10b 1
+!s100 5i:a9]iG<GPn8RJ750jHG1
+II=DXA`];2MLeX<TA1Nc`W1
+R2
+!s105 Finalsoc_irq_mapper_sv_unit
+S1
+R0
+R11
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_irq_mapper.sv
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_irq_mapper.sv
+L0 31
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_irq_mapper.sv|
+!s90 -reportprogress|300|-sv|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_irq_mapper.sv|
+!i113 1
+Z17 o-sv -work Finalsoc
+Z18 !s92 -sv -work Finalsoc +incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules
+R9
+n@finalsoc_irq_mapper
+vFinalsoc_jtag_uart_0
+R13
+!i10b 1
+!s100 mOKWiG]ij4<i9TR@KW_gg0
+I<GN>m1e08WA_dBcb?`89N1
+R2
+R0
+R14
+Z19 8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_jtag_uart_0.v
+Z20 FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_jtag_uart_0.v
+L0 331
+R5
+r1
+!s85 0
+31
+R15
+Z21 !s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_jtag_uart_0.v|
+Z22 !s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_jtag_uart_0.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_jtag_uart_0
+vFinalsoc_jtag_uart_0_scfifo_r
+R13
+!i10b 1
+!s100 HiLTH6K;7MKONX1_1mMcE1
+IGF@STL^lfJJl0NgR:Nb0A2
+R2
+R0
+R14
+R19
+R20
+L0 243
+R5
+r1
+!s85 0
+31
+R15
+R21
+R22
+!i113 1
+R7
+R8
+R9
+n@finalsoc_jtag_uart_0_scfifo_r
+vFinalsoc_jtag_uart_0_scfifo_w
+R13
+!i10b 1
+!s100 =mb?;YhPLYkg5WP3m6HA`3
+I3in;eIikJ?cUTEF_5MX2S2
+R2
+R0
+R14
+R19
+R20
+L0 78
+R5
+r1
+!s85 0
+31
+R15
+R21
+R22
+!i113 1
+R7
+R8
+R9
+n@finalsoc_jtag_uart_0_scfifo_w
+vFinalsoc_jtag_uart_0_sim_scfifo_r
+R13
+!i10b 1
+!s100 ^24>TeZmoG9eQ`Dkh5fG`3
+I?JdCQAAb^<_WX55VgIFhi1
+R2
+R0
+R14
+R19
+R20
+L0 164
+R5
+r1
+!s85 0
+31
+R15
+R21
+R22
+!i113 1
+R7
+R8
+R9
+n@finalsoc_jtag_uart_0_sim_scfifo_r
+vFinalsoc_jtag_uart_0_sim_scfifo_w
+R13
+!i10b 1
+!s100 8m_=JV>GMa95:=CS^K]H^1
+I<oNVPkKjBKBIcZj`II0lO0
+R2
+R0
+R14
+R19
+R20
+R4
+R5
+r1
+!s85 0
+31
+R15
+R21
+R22
+!i113 1
+R7
+R8
+R9
+n@finalsoc_jtag_uart_0_sim_scfifo_w
+vFinalsoc_key
+R13
+!i10b 1
+!s100 HaDb8QS3AEmQVXhZe^_3X0
+I]AKEJHWeZEU=AYUn2bD[D0
+R2
+R0
+R14
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_key.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_key.v
+R4
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_key.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_key.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_key
+vFinalsoc_keycode
+R13
+!i10b 1
+!s100 @IdNI=GEcP=kM1icHGg0k1
+IeLic:F0:GZo43A41B=bl`1
+R2
+R0
+R14
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_keycode.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_keycode.v
+R4
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_keycode.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_keycode.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_keycode
+vFinalsoc_leds_pio
+R13
+!i10b 1
+!s100 @;kQ;>h:h9ZAPfEjP]:2G3
+I1J61dkBHEO]OZcEEeoI1Y0
+R2
+R0
+R14
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_leds_pio.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_leds_pio.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_leds_pio.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_leds_pio.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_leds_pio
+vFinalsoc_mm_interconnect_0
+R10
+!i10b 1
+!s100 OcK4:iG3Aa7<eQbT?VA0:0
+IKTQMQTX7XY^4^:NE>L>9=2
+R2
+R0
+R11
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0.v
+L0 9
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_mm_interconnect_0
+vFinalsoc_mm_interconnect_0_avalon_st_adapter
+R1
+!i10b 1
+!s100 P@Kzo_SS`D^UjG2J8:AoZ0
+IUQV9@Vi6hWmRkzh0Ne8Jc3
+R2
+R0
+Z23 w1638323096
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter.v
+L0 9
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_mm_interconnect_0_avalon_st_adapter
+vFinalsoc_mm_interconnect_0_avalon_st_adapter_006
+R1
+!i10b 1
+!s100 NWS[LhTHA@;M;UzQ?1]2o1
+IShmIRE=zheb_FmS9aS>b_2
+R2
+R0
+R23
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_006.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_006.v
+L0 9
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_006.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_006.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_mm_interconnect_0_avalon_st_adapter_006
+vFinalsoc_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0
+R16
+R13
+!i10b 1
+!s100 Fo^I8l@iR4Z94G8T:oe7:1
+I<4=i;RRb`izL4H_18XT@m0
+R2
+!s105 Finalsoc_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0_sv_unit
+S1
+R0
+R23
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0.sv
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0.sv
+Z24 L0 66
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0.sv|
+!s90 -reportprogress|300|-sv|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0.sv|
+!i113 1
+R17
+R18
+R9
+n@finalsoc_mm_interconnect_0_avalon_st_adapter_006_error_adapter_0
+vFinalsoc_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+R16
+R13
+!i10b 1
+!s100 ZBbzVYKFDT5UO20`b0eaC1
+IgNQLJEg1U@XOW0?;DOMlc0
+R2
+!s105 Finalsoc_mm_interconnect_0_avalon_st_adapter_error_adapter_0_sv_unit
+S1
+R0
+R23
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+R24
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv|
+!s90 -reportprogress|300|-sv|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv|
+!i113 1
+R17
+R18
+R9
+n@finalsoc_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+vFinalsoc_nios2_gen2_0
+R1
+!i10b 1
+!s100 a^7]6:YY^PLeO6FJ;j6W72
+I>2B0N;8T[2HBh?lh@R;5B0
+R2
+R0
+Z25 w1638323079
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0.v
+L0 9
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0
+vFinalsoc_nios2_gen2_0_cpu
+R1
+!i10b 1
+!s100 l@n];4WF20=T]j<X0NllX1
+I]5@;7Mb:QhS?J[UcSl0^?1
+R2
+R0
+R3
+Z26 8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu.v
+Z27 FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu.v
+L0 2834
+R5
+r1
+!s85 0
+31
+R6
+Z28 !s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu.v|
+Z29 !s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu
+vFinalsoc_nios2_gen2_0_cpu_debug_slave_sysclk
+R1
+!i10b 1
+!s100 8NFGzcUbXOH:ZEPi@O_UI1
+I]Ud42j9>N^<U]:z8jL9DT2
+R2
+R0
+R3
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_sysclk.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_sysclk.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_sysclk.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_sysclk.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_debug_slave_sysclk
+vFinalsoc_nios2_gen2_0_cpu_debug_slave_tck
+R1
+!i10b 1
+!s100 oP2dS4cC;XzeRm]G:h?=k2
+I4F00]P@9Mk2V8dPVD3Sha2
+R2
+R0
+R3
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_tck.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_tck.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_tck.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_tck.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_debug_slave_tck
+vFinalsoc_nios2_gen2_0_cpu_debug_slave_wrapper
+R1
+!i10b 1
+!s100 :`@I<>f?GSZWR^FCUzVZ00
+I2RL7j5ZOPzQWZSQ;<aZo22
+R2
+R0
+R3
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_wrapper.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_wrapper.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_wrapper.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_debug_slave_wrapper.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_debug_slave_wrapper
+vFinalsoc_nios2_gen2_0_cpu_nios2_avalon_reg
+R1
+!i10b 1
+!s100 6P_dYo_7>OT63>i>4e^Th0
+IDb]aZBh]_=Q=HNc4@Q[He2
+R2
+R0
+R3
+R26
+R27
+L0 2023
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_avalon_reg
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci
+R1
+!i10b 1
+!s100 HIf0F;d:4lOeYM[ILV6Y;2
+I6iM@B>3Yn?MoSD`_1cz6Y2
+R2
+R0
+R3
+R26
+R27
+L0 2362
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_break
+R1
+!i10b 1
+!s100 iG3G>WmTIZzXb3NXaze>_1
+IKGZOGUZ?nMcVnm^Y5PMjO2
+R2
+R0
+R3
+R26
+R27
+L0 295
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_break
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_compute_input_tm_cnt
+R1
+!i10b 1
+!s100 87Q7dLUZbXMzDjd5;XLJ81
+IXCe9Nl0@Ucda;FG_;RPQ>2
+R2
+R0
+R3
+R26
+R27
+L0 1265
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_compute_input_tm_cnt
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_dbrk
+R1
+!i10b 1
+!s100 SDP1U>F1zjzKZO3?5>CV41
+I`8aPT_<;8]o4`BAMabzd]3
+R2
+R0
+R3
+R26
+R27
+L0 795
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_dbrk
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_debug
+R1
+!i10b 1
+!s100 i]c>zG7Zm4NcAJMzQ4?K>2
+Ia6OjZM_`KUf2]TYbma18R0
+R2
+R0
+R3
+R26
+R27
+L0 153
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_debug
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_dtrace
+R1
+!i10b 1
+!s100 ^Zl1l;7LGW^daoggF2h:52
+I4CzG0<ji90:^]POHoJLV92
+R2
+R0
+R3
+R26
+R27
+L0 1183
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_dtrace
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_fifo
+R1
+!i10b 1
+!s100 <eVQRDYjdBhWA6`G3R6?X0
+ILX7HnU_1n@@L1;f:_53fY0
+R2
+R0
+R3
+R26
+R27
+L0 1427
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_fifo
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_fifo_cnt_inc
+R1
+!i10b 1
+!s100 5;nh=_UX5D>_cZYliDH]X1
+IXomNJ;D]`KemOPUJUcYzL3
+R2
+R0
+R3
+R26
+R27
+L0 1380
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_fifo_cnt_inc
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_fifo_wrptr_inc
+R1
+!i10b 1
+!s100 ;UzG9JPW8B913=VfH8hgn3
+I9aOb@?8F=T;XYTOK@^5B;3
+R2
+R0
+R3
+R26
+R27
+L0 1337
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_fifo_wrptr_inc
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_im
+R1
+!i10b 1
+!s100 E=c8hHCo]UcgOW3k>D2=52
+IgjfjfaMEOG_jFPA]n8Pf03
+R2
+R0
+R3
+R26
+R27
+L0 1936
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_im
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_itrace
+R1
+!i10b 1
+!s100 ?R2Un<PiGagN^9e?bgIkJ2
+ITYhEn_M<haiGSYe[G7G^`0
+R2
+R0
+R3
+R26
+R27
+L0 982
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_itrace
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_pib
+R1
+!i10b 1
+!s100 TKaR:kgk4MbJJOWl3_Xk70
+IOdZ4eJ9mCTT7^H5nAn`QR2
+R2
+R0
+R3
+R26
+R27
+L0 1913
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_pib
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_td_mode
+R1
+!i10b 1
+!s100 9Zi8BAfK;@njZ:gbi`ozX0
+Iz^aY3W0Z4`ZQbZVKLD8453
+R2
+R0
+R3
+R26
+R27
+L0 1115
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_td_mode
+vFinalsoc_nios2_gen2_0_cpu_nios2_oci_xbrk
+R1
+!i10b 1
+!s100 O6XF=JQ>:EYcRhMETd9070
+IZRVN0d0I_>UhhO9kiA3H90
+R2
+R0
+R3
+R26
+R27
+L0 588
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_oci_xbrk
+vFinalsoc_nios2_gen2_0_cpu_nios2_ocimem
+R1
+!i10b 1
+!s100 ab7jXC07zS5?RJR>dmm5W2
+IGBWM8`WkZ5A9jTjZM3Rek0
+R2
+R0
+R3
+R26
+R27
+L0 2181
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_ocimem
+vFinalsoc_nios2_gen2_0_cpu_nios2_performance_monitors
+R1
+!i10b 1
+!s100 mULdIUL[;m_EYzLkniUEZ1
+IbjdJJ6OG3L2Y?MM1`LYgM3
+R2
+R0
+R3
+R26
+R27
+L0 2006
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_nios2_performance_monitors
+vFinalsoc_nios2_gen2_0_cpu_ociram_sp_ram_module
+R1
+!i10b 1
+!s100 :00Ma_bQRRB:k^5_h`>b?0
+Ic141ZIAN=QVEEPAndkeL@1
+R2
+R0
+R3
+R26
+R27
+L0 2116
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_ociram_sp_ram_module
+vFinalsoc_nios2_gen2_0_cpu_register_bank_a_module
+R1
+!i10b 1
+!s100 WU[<bM?:QZL3@P18J:bIG0
+I]Qe[46f0:AzOogEK9[Cnb0
+R2
+R0
+R3
+R26
+R27
+R4
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_register_bank_a_module
+vFinalsoc_nios2_gen2_0_cpu_register_bank_b_module
+R1
+!i10b 1
+!s100 MjhPT@T1_`D9P9JPO:bX@3
+IHmeEQB^=8F]H>4daa]n<z2
+R2
+R0
+R3
+R26
+R27
+L0 87
+R5
+r1
+!s85 0
+31
+R6
+R28
+R29
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_register_bank_b_module
+vFinalsoc_nios2_gen2_0_cpu_test_bench
+R1
+!i10b 1
+!s100 hS>gEzU0`W`VKcKCIi`Gb2
+IVDekB1C0aeZlVZBN<z6Zi3
+R2
+R0
+R3
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_test_bench.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_test_bench.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_test_bench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_nios2_gen2_0_cpu_test_bench.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_nios2_gen2_0_cpu_test_bench
+vFinalsoc_onchip_memory2_0
+R1
+!i10b 1
+!s100 @051o>;<LaYEAZEK7hHBO1
+IDLiaTnY6baFBKWE16]BMA2
+R2
+R0
+R25
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_onchip_memory2_0.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_onchip_memory2_0.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_onchip_memory2_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_onchip_memory2_0.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_onchip_memory2_0
+vFinalsoc_sdram
+R1
+!i10b 1
+!s100 []V0PHb8Ya>7EaN7n7K;d1
+Idd5Am?Md=cab^4eLSK<l01
+R2
+R0
+R25
+Z30 8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sdram.v
+Z31 FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sdram.v
+L0 159
+R5
+r1
+!s85 0
+31
+R6
+Z32 !s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sdram.v|
+Z33 !s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sdram.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_sdram
+vFinalsoc_sdram_input_efifo_module
+R1
+!i10b 1
+!s100 4aXN78I1]L4oK1e@h>Leb1
+I:[K`;;P9ic0FaCWN5VYVh1
+R2
+R0
+R25
+R30
+R31
+R4
+R5
+r1
+!s85 0
+31
+R6
+R32
+R33
+!i113 1
+R7
+R8
+R9
+n@finalsoc_sdram_input_efifo_module
+vFinalsoc_sdram_pll
+R1
+!i10b 1
+!s100 8EYfg03KcM6;_aLPXJ@T^2
+I;jH3Oi:Y3_DNjen:BG:9l2
+R2
+R0
+Z34 w1638323081
+Z35 8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sdram_pll.v
+Z36 FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sdram_pll.v
+L0 217
+R5
+r1
+!s85 0
+31
+R6
+Z37 !s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sdram_pll.v|
+Z38 !s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sdram_pll.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_sdram_pll
+vFinalsoc_sdram_pll_altpll_vg92
+R1
+!i10b 1
+!s100 XV@GOXB1:P?<mVm^a>YO]3
+I<c7S@Y8[]jQ?=^Vhz>dOU3
+R2
+R0
+R34
+R35
+R36
+L0 130
+R5
+r1
+!s85 0
+31
+R6
+R37
+R38
+!i113 1
+R7
+R8
+R9
+n@finalsoc_sdram_pll_altpll_vg92
+vFinalsoc_sdram_pll_dffpipe_l2c
+R1
+!i10b 1
+!s100 gK0IAMSRR:Ad2V1KH0ZZ;2
+I[5TfJORi@Odze`l[0PCeO1
+R2
+R0
+R34
+R35
+R36
+L0 37
+R5
+r1
+!s85 0
+31
+R6
+R37
+R38
+!i113 1
+R7
+R8
+R9
+n@finalsoc_sdram_pll_dffpipe_l2c
+vFinalsoc_sdram_pll_stdsync_sv6
+R1
+!i10b 1
+!s100 bYToYo@=H_:]bR6H>h`^g1
+IIi[c4>K<AgzeW@kkJdzDZ3
+R2
+R0
+R34
+R35
+R36
+L0 98
+R5
+r1
+!s85 0
+31
+R6
+R37
+R38
+!i113 1
+R7
+R8
+R9
+n@finalsoc_sdram_pll_stdsync_sv6
+vFinalsoc_spi0
+R1
+!i10b 1
+!s100 C6@;i6iJVFDQn7fC0T6;N1
+I`oGOm7kmZT_41QJ]hEl<a1
+R2
+R0
+R34
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_spi0.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_spi0.v
+L0 41
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_spi0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_spi0.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_spi0
+vFinalsoc_sysid_qsys_0
+R1
+!i10b 1
+!s100 @8CUNcS?[;zH75LIGTGi30
+I79B60z_>@k@aU54lBT5UC0
+R2
+R0
+R34
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sysid_qsys_0.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sysid_qsys_0.v
+L0 34
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sysid_qsys_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_sysid_qsys_0.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_sysid_qsys_0
+vFinalsoc_timer_0
+R1
+!i10b 1
+!s100 NdB8d^mSncco]QCh3Pj`=1
+Io0kR]4n7EDC]ZJR3Kn6dm0
+R2
+R0
+R34
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_timer_0.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_timer_0.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_timer_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_timer_0.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_timer_0
+vFinalsoc_usb_gpx
+R1
+!i10b 1
+!s100 fN`FVBjc9lAP]H@Fg8oJ;2
+I3c2:Rz2DVURnnTVI]NZKY1
+R2
+R0
+R34
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_usb_gpx.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_usb_gpx.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_usb_gpx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_usb_gpx.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_usb_gpx
+vFinalsoc_usb_rst
+R1
+!i10b 1
+!s100 4_ih<G]MmPK;:XbXJiFOT3
+IHNm[n=]zilj0nnLaz6N083
+R2
+R0
+R34
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_usb_rst.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_usb_rst.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_usb_rst.v|
+!s90 -reportprogress|300|-vlog01compat|-work|Finalsoc|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/Finalsoc/synthesis/submodules/Finalsoc_usb_rst.v|
+!i113 1
+R7
+R8
+R9
+n@finalsoc_usb_rst

@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Nov 18, 2021 11:29:27 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1637256567324</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>/home/jack/ECE385final/software/Tetris_2_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Nov 30, 2021 7:50:54 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1638323454863</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\shenj\OneDrive\Desktop\ECE385_Final_Project\software\Tetris_2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>../../Finalsoc.sopcinfo</SopcDesignFile>
+        <SopcDesignFile>..\..\Finalsoc.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_gen2_0</Cpu>
         <SchemaVersion>1.9</SchemaVersion>

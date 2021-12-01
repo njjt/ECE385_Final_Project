@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/simulation/modelsim
+vram2
+!s110 1638323965
+!i10b 1
+!s100 z:K>`NMNP1W0_AK7c2h9j1
+IR?Z_WRzBaM8Yb9h:kWQZE0
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1638318162
+8C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/ram2.v
+FC:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/ram2.v
+L0 39
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1638323965.000000
+!s107 C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/ram2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project|C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project/ram2.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/shenj/OneDrive/Desktop/ECE385_Final_Project
+tCvgOpt 0

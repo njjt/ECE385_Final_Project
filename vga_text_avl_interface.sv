@@ -44,8 +44,8 @@ logic wren;
 //logic [10:0] right;
 //logic rden;
 //addr_nh[10:7] = 4'b0000;
-assign addr_nh = 16*current_char + DrawY_nh[3:0]; 
-
+ 
+assign addr_nh = 16*Q + DrawY_nh[3:0];
 //Declare submodules..e.g. VGA controller, ROMS, etc
 vga_controller a1(.Clk(CLK),.Reset(RESET),.hs(hs),.vs(vs),.pixel_clk(pixel_clk_anh),.blank(blank_anh),.sync(sync_anh),.DrawX(DrawX_nh),.DrawY(DrawY_nh));
 font_rom a2(.addr(addr_nh),.data(data_nh));
@@ -56,7 +56,7 @@ always_ff @(posedge CLK) begin
 if(AVL_CS&&AVL_WRITE)
 begin
 //rden = 0;
-if(AVL_ADDR > 200)
+if(AVL_ADDR >= 240)
 begin
 wren <= 0;
 //AVL_READDATA = LOCAL_REG[AVL_ADDR[2:0]];
@@ -77,9 +77,9 @@ end
 end
 if(AVL_CS && AVL_READ)
 begin
-if(AVL_ADDR>200)
+if(AVL_ADDR>=240)
 begin
-AVL_READDATA <= pallette[AVL_ADDR -200];
+AVL_READDATA <= pallette[AVL_ADDR -240];
 end
 else
 begin
@@ -93,8 +93,23 @@ always_comb
 begin:block_display
 //left = ((((DrawX_nh - 140) >> 4)+1) *3)-1;
 //right =((((DrawX_nh - 140) >> 4)) *3); 
+if (DrawX_nh > 140 && DrawX_nh <= 300 && DrawY_nh > 100 && DrawY_nh <= 420)
+begin
+  read_addr = ((DrawY_nh-100) >> 4)*10 + ((DrawX_nh - 140) >> 4);
+   //addr_nh = 0; 
+end
 
-read_addr = ((DrawY_nh-100) >> 4)*10 + ((DrawX_nh - 140) >> 4);
+
+else if (DrawX_nh > 136 && DrawX_nh <= 216 && DrawY_nh > 16 && DrawY_nh <= 32)
+begin
+  read_addr = ((DrawX_nh-136) >> 3);
+  //addr_nh = 16*Q + DrawY_nh[3:0]; 
+end
+else 
+begin
+  read_addr = 0;
+  //addr_nh = 0; 
+end
 end
 
 
@@ -117,11 +132,24 @@ begin:Color_Display
 			green = pallette[Q[3:0]][7:4];
 			blue = pallette[Q[3:0]][3:0];
 		end
-		else if (DrawX_nh > 140 && DrawX_nh <= 300 && DrawY_nh > 20 && DrawY_nh <= 80) //player1 score_section
+		else if (DrawX_nh > 136 && DrawX_nh <= 216 && DrawY_nh > 16 && DrawY_nh <= 32) //player1 score_section
 		begin
-			red  = 0;
-			blue = 15;
-			green = 0;
+		
+			 if(data_nh[7-DrawX_nh[2:0]])
+			 begin
+
+			 red = 15;
+          green = 15;
+          blue = 15;
+			 end
+			 
+			 else
+			 begin
+			 red = 15;
+          green = 0;
+          blue = 15;
+			 end
+			
 		end
 		else if (DrawX_nh > 20 && DrawX_nh <= 120 && DrawY_nh > 180 && DrawY_nh <= 340) //player1 next_shape
 		begin
@@ -158,6 +186,6 @@ begin:Color_Display
 		
 end      
 
-ramp r1(.byteena_a(AVL_BYTE_EN),.clock(CLK),.data(AVL_WRITEDATA),.rdaddress(read_addr),.wraddress(AVL_ADDR),.wren(wren),.q(Q));
+ram2 r1(.byteena_a(AVL_BYTE_EN),.clock(CLK),.data(AVL_WRITEDATA),.rdaddress(read_addr),.wraddress(AVL_ADDR),.wren(wren),.q(Q));
 
 endmodule
