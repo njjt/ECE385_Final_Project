@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Dec 6, 2021 10:57:19 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1638809839392</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Dec 6, 2021 3:53:04 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1638827584281</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\shenj\OneDrive\Desktop\ECE385_Final_Project\software\Tetris_2_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Finalsoc.sopcinfo</SopcDesignFile>

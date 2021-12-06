@@ -56,7 +56,7 @@ always_ff @(posedge CLK) begin
 if(AVL_CS&&AVL_WRITE)
 begin
 //rden = 0;
-if(AVL_ADDR >= 240)
+if(AVL_ADDR >= 472)
 begin
 wren <= 0;
 //AVL_READDATA = LOCAL_REG[AVL_ADDR[2:0]];
@@ -77,9 +77,9 @@ end
 end
 if(AVL_CS && AVL_READ)
 begin
-if(AVL_ADDR>=240)
+if(AVL_ADDR>=472)
 begin
-AVL_READDATA <= pallette[AVL_ADDR -240];
+AVL_READDATA <= pallette[AVL_ADDR -472];
 end
 else
 begin
@@ -102,34 +102,34 @@ end
 
 else if (DrawX_nh > 136 && DrawX_nh <= 232 && DrawY_nh > 16 && DrawY_nh <= 32)//player 1 score display
 begin
-  read_addr = (((DrawX_nh-136) >> 3)+200);
+  read_addr = (((DrawX_nh-136) >> 3)+436);
   //addr_nh = 16*Q + DrawY_nh[3:0]; 
 end
 else if (DrawX_nh > 136 && DrawX_nh <= 232 && DrawY_nh > 32 && DrawY_nh <= 48) //player 1 level display
 begin
-  read_addr = (((DrawX_nh-136) >> 3)+212);
+  read_addr = (((DrawX_nh-136) >> 3)+448);
 
 end
 else if (DrawX_nh > 136 && DrawX_nh <= 232 && DrawY_nh > 48 && DrawY_nh <= 64) //player 1 lines display
 begin
-  read_addr = (((DrawX_nh-136) >> 3)+224);
+  read_addr = (((DrawX_nh-136) >> 3)+460);
 
 end
 else if (DrawX_nh > 340  && DrawX_nh <= 500 && DrawY_nh > 100 && DrawY_nh <= 420) // player 2 game 
 begin 
-  read_addr = (((DrawY_nh-100) >> 4)*10 + ((DrawX_nh - 340) >> 4)+ 236);
+  read_addr = (((DrawY_nh-100) >> 4)*10 + ((DrawX_nh - 340) >> 4)+ 200);
 end
-else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 16 && DrawY_nh <= 32) //player2 score
+else if (DrawX_nh > 336 && DrawX_nh <= 432 && DrawY_nh > 16 && DrawY_nh <= 32) //player2 score
 begin
- read_addr = (((DrawX_nh-340) >> 3)+200+236);
+ read_addr = (((DrawX_nh-336) >> 3)+200+200);
 end
-else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 32 && DrawY_nh <= 48) // player 2 level
+else if (DrawX_nh > 336 && DrawX_nh <= 432 && DrawY_nh > 32 && DrawY_nh <= 48) // player 2 level
 begin 
-   read_addr = (((DrawX_nh-340) >> 3)+212+236);
+   read_addr = (((DrawX_nh-336) >> 3)+212+200);
 end
-else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 48 && DrawY_nh <= 64) // player 2 line
+else if (DrawX_nh > 336 && DrawX_nh <= 432 && DrawY_nh > 48 && DrawY_nh <= 64) // player 2 line
 begin
-   read_addr = (((DrawX_nh-340) >> 3)+224 + 236);
+   read_addr = (((DrawX_nh-336) >> 3)+224 + 200);
 end
 else 
 begin
@@ -228,14 +228,14 @@ begin:Color_Display
 			green = pallette[Q[3:0]][7:4];
 			blue = pallette[Q[3:0]][3:0];
 		end
-		else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 16 && DrawY_nh <= 32) //player2 score_section
+		else if (DrawX_nh > 336 && DrawX_nh <= 432 && DrawY_nh > 16 && DrawY_nh <= 32) //player2 score_section
 		begin
 			if(data_nh[7-DrawX_nh[2:0]])
 			 begin
 
-			 red = 15;
-          green = 15;
-          blue = 15;
+			 red = 0;
+          green = 0;
+          blue = 0;
 			 end
 			 
 			 else
@@ -246,15 +246,15 @@ begin:Color_Display
 			 end
 			 
 		end
-			else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 32 && DrawY_nh <= 48) //player2 level_section
+			else if (DrawX_nh > 336 && DrawX_nh <= 432 && DrawY_nh > 32 && DrawY_nh <= 48) //player2 level_section
 		begin
 		
 			 if(data_nh[7-DrawX_nh[2:0]])
 			 begin
 
-			 red = 15;
-          green = 15;
-          blue = 15;
+			 red = 0;
+          green = 0;
+          blue = 0;
 			 end
 			 
 			 else
@@ -265,15 +265,15 @@ begin:Color_Display
 			 end
 			
 		end
-		else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 48 && DrawY_nh <= 64) //player2 lines_section
+		else if (DrawX_nh > 336 && DrawX_nh <= 432 && DrawY_nh > 48 && DrawY_nh <= 64) //player2 lines_section
 		begin
 		
 			 if(data_nh[7-DrawX_nh[2:0]])
 			 begin
 
-			 red = 15;
-          green = 15;
-          blue = 15;
+			 red = 0;
+          green = 0;
+          blue = 0;
 			 end
 			 
 			 else
