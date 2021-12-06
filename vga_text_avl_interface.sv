@@ -93,17 +93,43 @@ always_comb
 begin:block_display
 //left = ((((DrawX_nh - 140) >> 4)+1) *3)-1;
 //right =((((DrawX_nh - 140) >> 4)) *3); 
-if (DrawX_nh > 140 && DrawX_nh <= 300 && DrawY_nh > 100 && DrawY_nh <= 420)
+if (DrawX_nh > 140 && DrawX_nh <= 300 && DrawY_nh > 100 && DrawY_nh <= 420)//player one game display
 begin
   read_addr = ((DrawY_nh-100) >> 4)*10 + ((DrawX_nh - 140) >> 4);
    //addr_nh = 0; 
 end
 
 
-else if (DrawX_nh > 136 && DrawX_nh <= 216 && DrawY_nh > 16 && DrawY_nh <= 32)
+else if (DrawX_nh > 136 && DrawX_nh <= 232 && DrawY_nh > 16 && DrawY_nh <= 32)//player 1 score display
 begin
-  read_addr = ((DrawX_nh-136) >> 3);
+  read_addr = (((DrawX_nh-136) >> 3)+200);
   //addr_nh = 16*Q + DrawY_nh[3:0]; 
+end
+else if (DrawX_nh > 136 && DrawX_nh <= 232 && DrawY_nh > 32 && DrawY_nh <= 48) //player 1 level display
+begin
+  read_addr = (((DrawX_nh-136) >> 3)+212);
+
+end
+else if (DrawX_nh > 136 && DrawX_nh <= 232 && DrawY_nh > 48 && DrawY_nh <= 64) //player 1 lines display
+begin
+  read_addr = (((DrawX_nh-136) >> 3)+224);
+
+end
+else if (DrawX_nh > 340  && DrawX_nh <= 500 && DrawY_nh > 100 && DrawY_nh <= 420) // player 2 game 
+begin 
+  read_addr = (((DrawY_nh-100) >> 4)*10 + ((DrawX_nh - 340) >> 4)+ 236);
+end
+else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 16 && DrawY_nh <= 32) //player2 score
+begin
+ read_addr = (((DrawX_nh-340) >> 3)+200+236);
+end
+else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 32 && DrawY_nh <= 48) // player 2 level
+begin 
+   read_addr = (((DrawX_nh-340) >> 3)+212+236);
+end
+else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 48 && DrawY_nh <= 64) // player 2 line
+begin
+   read_addr = (((DrawX_nh-340) >> 3)+224 + 236);
 end
 else 
 begin
@@ -132,10 +158,79 @@ begin:Color_Display
 			green = pallette[Q[3:0]][7:4];
 			blue = pallette[Q[3:0]][3:0];
 		end
-		else if (DrawX_nh > 136 && DrawX_nh <= 216 && DrawY_nh > 16 && DrawY_nh <= 32) //player1 score_section
+		else if (DrawX_nh > 136 && DrawX_nh <= 232 && DrawY_nh > 16 && DrawY_nh <= 32) //player1 score_section
 		begin
 		
 			 if(data_nh[7-DrawX_nh[2:0]])
+			 begin
+
+			 red = 0;
+          green = 0;
+          blue = 0;
+			 end
+			 
+			 else
+			 begin
+			 red = 15;
+          green = 0;
+          blue = 15;
+			 end
+			
+		end
+		else if (DrawX_nh > 136 && DrawX_nh <= 232 && DrawY_nh > 32 && DrawY_nh <= 48) //player1 level_section
+		begin
+		
+			 if(data_nh[7-DrawX_nh[2:0]])
+			 begin
+
+			 red = 0;
+          green = 0;
+          blue = 0;
+			 end
+			 
+			 else
+			 begin
+			 red = 15;
+          green = 15;
+          blue = 0;
+			 end
+			
+		end
+		else if (DrawX_nh > 136 && DrawX_nh <= 232 && DrawY_nh > 48 && DrawY_nh <= 64) //player1 lines_section
+		begin
+		
+			 if(data_nh[7-DrawX_nh[2:0]])
+			 begin
+
+			 red = 0;
+          green = 0;
+          blue = 0;
+			 end
+			 
+			 else
+			 begin
+			 red = 0;
+          green = 15;
+          blue = 15;
+			 end
+			
+		end
+		else if (DrawX_nh > 20 && DrawX_nh <= 120 && DrawY_nh > 180 && DrawY_nh <= 340) //player1 next_shape
+		begin
+			red  = 0;
+			blue = 15;
+			green = 0;
+		end
+		else if (DrawX_nh > 340  && DrawX_nh <= 500 && DrawY_nh > 100 && DrawY_nh <= 420) //player2
+		begin
+			
+		   red = pallette[Q[3:0]][11:8];
+			green = pallette[Q[3:0]][7:4];
+			blue = pallette[Q[3:0]][3:0];
+		end
+		else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 16 && DrawY_nh <= 32) //player2 score_section
+		begin
+			if(data_nh[7-DrawX_nh[2:0]])
 			 begin
 
 			 red = 15;
@@ -149,25 +244,45 @@ begin:Color_Display
           green = 0;
           blue = 15;
 			 end
+			 
+		end
+			else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 32 && DrawY_nh <= 48) //player2 level_section
+		begin
+		
+			 if(data_nh[7-DrawX_nh[2:0]])
+			 begin
+
+			 red = 15;
+          green = 15;
+          blue = 15;
+			 end
+			 
+			 else
+			 begin
+			 red = 15;
+          green = 15;
+          blue = 0;
+			 end
 			
 		end
-		else if (DrawX_nh > 20 && DrawX_nh <= 120 && DrawY_nh > 180 && DrawY_nh <= 340) //player1 next_shape
+		else if (DrawX_nh > 340 && DrawX_nh <= 436 && DrawY_nh > 48 && DrawY_nh <= 64) //player2 lines_section
 		begin
-			red  = 0;
-			blue = 15;
-			green = 0;
-		end
-		else if (DrawX_nh > 340  && DrawX_nh <= 500 && DrawY_nh > 100 && DrawY_nh <= 420) //player2
-		begin
-			red  = 0;
-			blue = 5;
-			green = 5;
-		end
-		else if (DrawX_nh > 340  && DrawX_nh <= 500 && DrawY_nh > 20 && DrawY_nh <= 80) //player2 score_section
-		begin
-			red  = 0;
-			blue = 5;
-			green = 5;
+		
+			 if(data_nh[7-DrawX_nh[2:0]])
+			 begin
+
+			 red = 15;
+          green = 15;
+          blue = 15;
+			 end
+			 
+			 else
+			 begin
+			 red = 0;
+          green = 15;
+          blue = 15;
+			 end
+			
 		end
 		else if (DrawX_nh > 520  && DrawX_nh <= 620 && DrawY_nh > 180 && DrawY_nh <= 340) //player2 next_shape
 		begin
