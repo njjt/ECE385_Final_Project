@@ -193,7 +193,7 @@ BYTE* returnKeys()
 					//}
 					//errorflag = 0;
 					//clearLED(9);
-		printf("%x \n",*kbdbuf.keycode);
+		//printf("%x \n",*kbdbuf.keycode);
 		return kbdbuf.keycode;
 }
 
@@ -270,7 +270,7 @@ int removeRow(int y,int offset){
 				}
 			}
 			if(colCount == 10){
-			printf("%x \n", y);
+			//printf("%x \n", y);
 				for(int k = ((i)*10+9);k>0;k--){
 					if(k < 200){
 					if((k-(10)) >= 0){
@@ -345,7 +345,7 @@ int pieceNums[28] = {0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6};
 int pieceCount = 0;
 int genTet(){
 	int res = -1;
-	if(pieceCount == 28){
+	if(pieceCount >= 28){
 		pieceCount = 0;
 		for(int i=0;i<28;i++){
 			pieceNums[i] = i/4;
@@ -353,8 +353,11 @@ int genTet(){
 	}
 	int select = rand()%28;
 	while(pieceNums[select] == -1){
+		printf("%d\n",pieceCount);
 		select = rand()%28;
+
 	}
+	pieceCount++;
 	res = pieceNums[select];
 	pieceNums[select] = -1;
 	return res;
@@ -364,10 +367,16 @@ int genTet(){
 void textVGADrawColorText(char* str, int offset)
 {
 	int i = 0;
+	char* sp = " ";
 	while (str[i]!=0)
 	{
 		vga_ctrl->VRAM[i+offset] = str[i];
 		i++;
+	}
+	if(i < 11){
+		for(int j=i;j<12;j++){
+			vga_ctrl->VRAM[j+offset] = *sp;
+		}
 	}
 }
 int pieces[7][4] = {
@@ -512,12 +521,12 @@ void left(int* x,int* y,int* curr_tet, int* select, int offset){
 
 }
 void right(int* x,int* y,int* curr_tet, int* select, int offset) {
-int currx =0;
-int curry =0;
-bool move = true;
-bool last = false;
-int blocks[4] = {0,0,0,0};
-int block_count =0;
+	int currx =0;
+	int curry =0;
+	bool move = true;
+	bool last = false;
+	int blocks[4] = {0,0,0,0};
+	int block_count =0;
      for(int bit = 1 ; bit <= 0x8000 ; bit = bit << 1) {
 					if((*curr_tet & bit) != 0){
 						if(!isUsed(-currx+1+*x+3,-curry+*y+3,offset) || last){
@@ -644,7 +653,7 @@ int main() {
 	bool flag2 = true;
 	int lines2 = 0;
 	int score2 = 0;
-	int level2 = 1;
+	int level2 = 5;
 	int levelThreshold2 = 0;
 	char score_string2[80];
 	char level_string2[80];
@@ -661,13 +670,19 @@ int main() {
 
 	initGame();
 	//player 1 start
-	//select = genTet();
-	//curr_tet = pieces[select][0];
-	//flag = placeNewTet(curr_tet,select+1,0);
+	select = genTet();
+	curr_tet = pieces[select][0];
+	flag = placeNewTet(curr_tet,select+1,0);
 	//player 2 start
 	select2 = genTet();
 	curr_tet2 = pieces[select2][0];
 	flag2 = placeNewTet(curr_tet2,select2+1,200);
+	clock_t start1 = clock();
+	clock_t start2 = clock();
+	clock_t end1;
+	clock_t end2;
+	char* win = " WINNER";
+	char* lose = " LOSER";
 	while (1) {
 		//draw scores,lines, and levels
 		sprintf(score_string, " Score : %d", score);
@@ -687,7 +702,7 @@ int main() {
 
 
 		//textVGADrawColorText (level_string,);
-        printf("some thing");
+
 		//textVGADrawColorText (line_string,250);
 		printSignedHex0(level);
 		printSignedHex1(score);
@@ -696,6 +711,8 @@ int main() {
 		key2 = 0x00;
 		one = false;
 		two = false;
+
+		//get either player keys
 		for(int i=0;i<6;i++){
 			if((curr[i] == 0x1A || curr[i] == 0x04 || curr[i] == 0x07 || curr[i] == 0x16) && !one){
 				key1 = curr[i];
@@ -709,13 +726,79 @@ int main() {
 				break;
 			}
 		}
+		//pause condition esc to start, space to stop
 		if(*curr == 0x29){
 			while(*curr != 0x2C){
 				curr = returnKeys();
 			}
 			usleep(250000);
 		}
-		if(!flag || !flag2){
+		if(!flag && !flag2){
+			if(score > score2){
+
+				textVGADrawColorText (win,436);
+
+				textVGADrawColorText (win,448);
+
+				textVGADrawColorText (win,460);
+
+
+
+				textVGADrawColorText (lose,400);
+
+				textVGADrawColorText (lose,412);
+
+				textVGADrawColorText (lose,424);
+			}
+			else if(score2 > score){
+
+				textVGADrawColorText (lose,436);
+
+				textVGADrawColorText (lose,448);
+
+				textVGADrawColorText (lose,460);
+
+				textVGADrawColorText (win,400);
+
+				textVGADrawColorText (win,412);
+
+				textVGADrawColorText (win,424);
+			}
+			else if(level >= level2){
+				textVGADrawColorText (win,436);
+
+				textVGADrawColorText (win,448);
+
+				textVGADrawColorText (win,460);
+
+
+
+				textVGADrawColorText (lose,400);
+
+				textVGADrawColorText (lose,412);
+
+				textVGADrawColorText (lose,424);
+			}
+			else if(level2 > level){
+				textVGADrawColorText (lose,436);
+
+				textVGADrawColorText (lose,448);
+
+				textVGADrawColorText (lose,460);
+
+				textVGADrawColorText (win,400);
+
+				textVGADrawColorText (win,412);
+
+				textVGADrawColorText (win,424);
+			}
+			curr = returnKeys();
+
+			while(*curr != 0x2C){
+				curr = returnKeys();
+				}
+
+
 			usleep(500000);
 			initGame();
 			select = genTet();
@@ -728,10 +811,10 @@ int main() {
 			curr_rot = 0;
 			x= 3;
 			y= 0;
-			initGame();
+
 			select2 = genTet();
 			score2 = 0;
-			level2 =1;
+			level2 =5;
 			lines2 = 0;
 			levelThreshold2 = 0;
 			curr_tet2 = pieces[select2][0];
@@ -741,12 +824,21 @@ int main() {
 			y2= 0;
 		}
 		//down
-		Down(&x,&y,&curr_tet,&lines,&score,&level,&levelThreshold, &select,&flag, 0);
-		Down(&x2,&y2,&curr_tet2,&lines2,&score2,&level2,&levelThreshold2, &select2,&flag2, 200);
 
-		usleep(17000-1000*level);
+		end1 = clock();
+		end2 = clock();
 
+		if((double)(end1-start1)/(double)CLOCKS_PER_SEC >= 0.5 -(0.05*level) && flag){
+			start1 = clock();
+			Down(&x,&y,&curr_tet,&lines,&score,&level,&levelThreshold, &select,&flag, 0);
+		}
+		if((double)(end2-start2)/(double)CLOCKS_PER_SEC >= 0.5 -(0.05*level2) && flag2){
+			start2 = clock();
+			Down(&x2,&y2,&curr_tet2,&lines2,&score2,&level2,&levelThreshold2, &select2,&flag2, 200);
+		}
+		//usleep(17000-1000*level);
 
+		if(flag){
 		switch(key1){
 		//rotate
 		case 0x1A:
@@ -766,6 +858,8 @@ int main() {
 			Down(&x,&y,&curr_tet,&lines,&score,&level,&levelThreshold, &select,&flag, 0);
 			break;
 		}
+		}
+		if(flag2){
 		switch(key2){
 			case 0x60:
 				rotate(&curr_rot2,&x2,&y2,&curr_tet2, &select2,200);
@@ -784,7 +878,8 @@ int main() {
 				Down(&x2,&y2,&curr_tet2,&lines2,&score2,&level2,&levelThreshold2, &select2,&flag2, 200);
 				break;
 		}
-		usleep(17000-1000*level);
+		}
+		//usleep(17000-1000*level);
 	}
 	return 0;
 }
