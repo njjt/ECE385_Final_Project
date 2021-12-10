@@ -215,13 +215,7 @@ begin:Color_Display
 			 end
 			
 		end
-		else if (DrawX_nh > 20 && DrawX_nh <= 120 && DrawY_nh > 180 && DrawY_nh <= 340) //player1 next_shape
-		begin
-			red  = 0;
-			blue = 15;
-			green = 0;
-		end
-		else if (DrawX_nh > 340  && DrawX_nh <= 500 && DrawY_nh > 100 && DrawY_nh <= 420) //player2
+               else if (DrawX_nh > 340  && DrawX_nh <= 500 && DrawY_nh > 100 && DrawY_nh <= 420) //player2
 		begin
 			
 		   red = pallette[Q[3:0]][11:8];
@@ -284,13 +278,7 @@ begin:Color_Display
 			 end
 			
 		end
-		else if (DrawX_nh > 520  && DrawX_nh <= 620 && DrawY_nh > 180 && DrawY_nh <= 340) //player2 next_shape
-		begin
-			red  = 0;
-			blue = 5;
-			green = 5;
-		end
-		else 
+	        else 
 		begin
 		red = 0;
 		green = 0;
